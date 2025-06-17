@@ -400,7 +400,7 @@ function App() {
               className="stop-btn"
               onClick={stopSearch}
             >
-              ⏹️ Arrêter la recherche
+               Arrêter la recherche
             </button>
           )}
         </div>

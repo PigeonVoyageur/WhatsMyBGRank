@@ -74,7 +74,7 @@ h1 {
 .remove-player-btn {
   width: 35px;
   height: 35px;
-  background: linear-gradient(135deg, #ff4757 0%, #ff3742 100%);
+  background: linear-gradient(135deg, #6789e9 0%, #3510da 100%);
   color: white;
   border: none;
   border-radius: 50%;
@@ -192,7 +192,7 @@ h1 {
 
 .stop-btn {
   width: 100%;
-  background: linear-gradient(135deg, #ff4757 0%, #ff3742 100%);
+  background: linear-gradient(135deg, #4c069c 0%, #4218db 100%);
   color: white;
   border: none;
   border-radius: 10px;
