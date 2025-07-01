@@ -53,7 +53,7 @@ function App() {
       ? '/api' 
       : 'https://playhearthstone.com';
     // Utiliser seulement le proxy Vite qui est le plus rapide
-    const viteProxyUrl = `/api/fr-fr/api/community/leaderboardsData?region=${region}&leaderboardId=${gameMode}&seasonId=${actualSeasonId}&page=${page}`;
+    const viteProxyUrl = `${baseURL}/fr-fr/api/community/leaderboardsData?region=${region}&leaderboardId=${gameMode}&seasonId=${actualSeasonId}&page=${page}`;
     
     try {
       const controller = new AbortController();
