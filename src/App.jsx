@@ -48,10 +48,7 @@ function App() {
   // Fonction pour récupérer les données de l'API
   const fetchLeaderboardData = async (page = 1) => {
     const actualSeasonId = gameMode === 'battlegroundsduo' ? season + 5 : season;
-    const isLocal = import.meta.env.DEV;
-    const baseURL = isLocal 
-      ? '/api' 
-      : 'https://playhearthstone.com';
+    const baseURL ='https://playhearthstone.com';
     // Utiliser seulement le proxy Vite qui est le plus rapide
     const viteProxyUrl = `${baseURL}/fr-fr/api/community/leaderboardsData?region=${region}&leaderboardId=${gameMode}&seasonId=${actualSeasonId}&page=${page}`;
     
