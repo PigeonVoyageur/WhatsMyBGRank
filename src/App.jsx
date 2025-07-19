@@ -49,14 +49,17 @@ function App() {
   const fetchLeaderboardData = async (page = 1) => {
     const actualSeasonId = gameMode === 'battlegroundsduo' ? season + 5 : season;
     
-    // Utiliser seulement le proxy Vite qui est le plus rapide
-    const viteProxyUrl = `/api/fr-fr/api/community/leaderboardsData?region=${region}&leaderboardId=${gameMode}&seasonId=${actualSeasonId}&page=${page}`;
+    // Utiliser l'API route Vercel en production ou le proxy Vite en développement
+    const isProduction = window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1';
+    const apiUrl = isProduction 
+      ? `/api/leaderboard?region=${region}&leaderboardId=${gameMode}&seasonId=${actualSeasonId}&page=${page}`
+      : `/api/fr-fr/api/community/leaderboardsData?region=${region}&leaderboardId=${gameMode}&seasonId=${actualSeasonId}&page=${page}`;
     
     try {
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 10000); // Timeout de 10s
       
-      const response = await fetch(viteProxyUrl, {
+      const response = await fetch(apiUrl, {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
